@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Google</title>
+        <link
+            rel="icon"
+            href="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png"
+        />
+        <style>
+            body {
+                margin: 0px;
+                font-family: arial, sans-serif;
+                line-height: 24px;
+                font-size: 13px;
+            }
+            a {
+                text-decoration: none;
+                color: rgba(0, 0, 0, 0.87);
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            #App {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+            #content {
+            }
+            header {
+                padding: 6px;
+            }
+            footer {
+                flex-shrink: 0;
+                padding: 0 20px;
+                display: flex;
+                justify-content: space-between;
+                background-color: #f2f2f2;
+            }
+            footer a {
+                font-size: 14px;
+                color: #70757a;
+                display: block;
+                padding: 12px 15px 11px 15px;
+            }
+            footer > .links-left {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            footer > .links-right {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            .svg-icon {
+                display: inline-block;
+                box-sizing: border-box;
+                height: 48px;
+                width: 48px;
+                padding: 12px;
+            }
+            .svg-icon > svg {
+                color: #5f6368;
+                opacity: 1;
+                fill: currentColor;
+            }
+            .float-right {
+                float: right;
+            }
+            .header-links-section {
+                height: 100%;
+                display: grid;
+                grid-template-columns: auto auto auto;
+                align-items: center;
+            }
+            .header-link {
+                padding-left: 15px;
+            }
+            .header-icons-section {
+                display: grid;
+                grid-template-columns: auto auto;
+                align-items: center;
+                padding-right: 4px;
+            }
+
+            .user-profile-image {
+                height: 32px;
+                width: 32px;
+                text-align: center;
+                overflow: hidden;
+                padding: 8px;
+            }
+            .user-profile-image > img {
+                border-radius: 50%;
+            }
+            #App > div {
+                box-sizing: border-box;
+                flex-shrink: 0;
+            }
+            #logoSection {
+                min-height: 92px;
+                max-height: 290px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                height: calc(100% - 560px);
+            }
+            #logoSection > div {
+                margin-top: auto;
+                max-height: 92px;
+            }
+            #searchBarSection {
+                padding: 20px;
+                height: 160px;
+            }
+            #searchBarSection > div {
+                width: auto;
+                padding-top: 6px;
+                max-width: 584px;
+                margin: 0 auto;
+            }
+
+            #searchBar {
+                background: #fff;
+                display: flex;
+                border: 1px solid #dfe1e5;
+                box-shadow: none;
+                border-radius: 24px;
+                z-index: 3;
+                height: 39px;
+                margin: 0 auto;
+                padding: 5px 8px 0px 14px;
+            }
+            #searchBar:hover {
+                border-color: rgba(223, 225, 229, 0);
+                box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+            }
+            #searchIcon {
+                display: flex;
+                align-items: center;
+                padding-right: 13px;
+                margin-top: -9px;
+            }
+            #searchIcon > svg {
+                margin-top: 3px;
+                color: #9aa0a6;
+                height: 20px;
+                width: 20px;
+                display: inline-block;
+                fill: currentColor;
+            }
+            #languageOption {
+                flex-grow: 1;
+            }
+            #searchBar > div {
+                flex-wrap: wrap;
+            }
+            #searchInputSection {
+                width: 100%;
+            }
+            #searchInputSection input {
+                background-color: transparent;
+                border: none;
+                padding: 0px;
+                height: 34px;
+                font-size: 16px;
+                outline: none;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="App">
+            <header>
+                <div class="float-right header-links-section">
+                    <a href="#" class="header-link">Gmail</a>
+                    <a href="#" class="header-link">Images</a>
+                    <div class="header-icons-section header-link">
+                        <a href="#" class="svg-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"
+                                ></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="user-profile-image">
+                            <img
+                                class="gb_Da gbii"
+                                src="https://lh3.googleusercontent.com/ogw/ADGmqu8btRx6LlBT28LVDDV-Cb4blFROXmSMMX6UFW--=s32-c-mo"
+                                alt=""
+                                aria-hidden="true"
+                            />
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <div id="logoSection">
+                <div>
+                    <img
+                        alt="Google"
+                        src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+                        width="272"
+                        height="92"
+                    />
+                </div>
+            </div>
+            <div id="searchBarSection">
+                <div>
+                    <div id="searchBar">
+                        <div id="searchIcon">
+                            <svg
+                                focusable="false"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div id="searchInputSection">
+                            <input type="text" id="searchBox" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="languageOption"></div>
+            <footer>
+                <div class="links-left">
+                    <a href="#">About</a>
+                    <a href="#">Advertising</a>
+                    <a href="#">Business</a>
+                    <a href="#">How Search works</a>
+                </div>
+                <div class="links-right">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Settings</a>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
